@@ -155,16 +155,6 @@ ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     endif
 endif
 
-ifeq ($(PLATFORM),PLATFORM_WEB)
-    # Emscripten required variables
-    EMSDK_PATH         ?= C:/emsdk
-    EMSCRIPTEN_PATH    ?= $(EMSDK_PATH)/upstream/emscripten
-    CLANG_PATH          = $(EMSDK_PATH)/upstream/bin
-    PYTHON_PATH         = $(EMSDK_PATH)/python/3.7.4-pywin32_64bit
-    NODE_PATH           = $(EMSDK_PATH)/node/12.18.1_64bit/bin
-    export PATH         = $(EMSDK_PATH);$(EMSCRIPTEN_PATH);$(CLANG_PATH);$(NODE_PATH);$(PYTHON_PATH);C:\raylib\MinGW\bin:$$(PATH)
-endif
-
 ifeq ($(PLATFORM),PLATFORM_ANDROID)
     # Android architecture
     # Starting at 2019 using arm64 is mandatory for published apps,
